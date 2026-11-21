@@ -1,122 +1,299 @@
+<!
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Review Center - Shop Smarter</title>
-    <link rel="stylesheet" href="style.css">
+
+    <title>ShopScope - Shop Smarter</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #FAF8F5;
+            color: #222222;
+        }
+
+        /* HERO SECTION */
+
+        .hero {
+            background-color: #EFE6DC;
+            text-align: center;
+            padding: 60px 20px 100px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin: 0 0 20px;
+            color: #222222;
+        }
+
+        .hero p {
+            font-size: 18px;
+        }
+
+        .hero button {
+            background-color: #222222;
+            color: white;
+            border: none;
+            padding: 17px 30px;
+            border-radius: 7px;
+            font-size: 17px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .hero button:hover {
+            background-color: #713F2B;
+        }
+
+        /* COMMON SECTION */
+
+        .section {
+            padding: 50px 7%;
+        }
+
+        .section h2 {
+            font-size: 30px;
+            margin-bottom: 30px;
+            color: #222222;
+        }
+
+        /* SHOPPING WEBSITE CARDS */
+
+        .website-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        .website-card {
+            background-color: white;
+            padding: 25px;
+            border-radius: 12px;
+            min-height: 160px;
+            transition: 0.3s;
+        }
+
+        .website-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .website-card h3 {
+            font-size: 22px;
+            margin-top: 10px;
+        }
+
+        .website-card p {
+            font-size: 17px;
+            line-height: 1.5;
+        }
+
+        /* LATEST BLOGS */
+
+        .latest-blogs {
+            padding: 50px 7%;
+        }
+
+        .latest-blogs h2 {
+            font-size: 30px;
+            margin-bottom: 30px;
+        }
+
+        .blog-container {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 380px));
+            gap: 24px;
+        }
+
+        .blog-card {
+            background-color: white;
+            padding: 25px;
+            border-radius: 12px;
+            min-height: 190px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+            transition: 0.3s;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.10);
+        }
+
+        .blog-card a {
+            text-decoration: none;
+            color: #222222;
+            display: block;
+        }
+
+        .blog-card h3 {
+            font-size: 22px;
+            color: #713F2B;
+            margin-top: 5px;
+        }
+
+        .blog-card p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #333333;
+        }
+
+        .blog-card span {
+            display: inline-block;
+            color: #A65D42;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background-color: #222222;
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
+
+        footer p {
+            margin: 5px;
+        }
+
+        /* RESPONSIVE DESIGN */
+
+        @media (max-width: 900px) {
+            .website-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .blog-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .website-container {
+                grid-template-columns: 1fr;
+            }
+
+            .section,
+            .latest-blogs {
+                padding: 30px 6%;
+            }
+
+            .blog-card {
+                width: 100%;
+            }
+        }
+
+    </style>
+
 </head>
+
 <body>
 
-    <header>
-        <h1>ShopScope<span>.</span></h1>
-        <nav>
-            <a href="#">Home</a>
-            <a href="#reviews">Reviews</a>
-            <a href="#blogs">Blogs</a>
-            <a href="#about">About</a>
-        </nav>
+    <!-- HERO SECTION -->
+
+    <header class="hero">
+
+        <h1>Shop Smarter. Know Better.</h1>
+
+        <p>Your guide to smarter online shopping.</p>
+
+        <button onclick="document.getElementById('websites').scrollIntoView({behavior:'smooth'})">
+            Explore Now
+        </button>
+
     </header>
 
-    <section class="hero">
-        <h2>Shop Smarter. Know Better.</h2>
-        <p>Your guide to smarter online shopping.</p>
-        <a href="#reviews" class="btn">Explore Now</a>
-    </section>
 
-    <section id="reviews">
+    <!-- EXPLORE SHOPPING WEBSITES -->
+
+    <section class="section" id="websites">
+
         <h2>Explore Shopping Websites</h2>
 
-        <div class="cards">
-            <div class="card">
+        <div class="website-container">
+
+            <div class="website-card">
                 <h3>Amazon</h3>
                 <p>Shopping deals and product reviews.</p>
             </div>
 
-            <div class="card">
+            <div class="website-card">
                 <h3>Flipkart</h3>
                 <p>Electronics and shopping guides.</p>
             </div>
 
-            <div class="card">
+            <div class="website-card">
                 <h3>Myntra</h3>
                 <p>Fashion and clothing reviews.</p>
             </div>
 
-            <div class="card">
+            <div class="website-card">
                 <h3>Meesho</h3>
                 <p>Affordable shopping discoveries.</p>
             </div>
-        </div>
-    </section>
-
-    <section 
-<section class="latest-blogs" id="latest-blogs">
-
-    <h2>Latest Blogs</h2>
-
-    <div class="blog-card">
-
-        <a href="first.blog.html" class="blog-link">
-
-            <h3>UrbanX Website – My Honest Shopping Experience & Review</h3>
-
-            <p>
-                Recently purchased from UrbanX?
-                Read my honest review about product quality,
-                delivery, fitting and customer service.
-            </p>
-
-            <span>Read More →</span>
-
-        </a>
-
-    </div>
-
-</section>
-
-<section class="latest-blogs" id="latest-blogs">
-
-    <h2>Latest Blogs</h2>
-
-    <div class="blog-container">
-
-        <!-- FIRST BLOG -->
-
-        <div class="blog-card">
-
-            <a href="first.blog.html">
-
-                <img src="images/img 1.jpg"
-                     alt="UrbanX Trouser Review">
-
-                <h3>UrbanX Website – My Honest Review</h3>
-
-                <p>
-                    Recently purchased from UrbanX?
-                    Read my honest shopping experience,
-                    including product quality, delivery,
-                    fitting and customer service.
-                </p>
-
-                <span>Read Full Blog →</span>
-
-            </a>
 
         </div>
 
-    </div>
+    </section>
 
-</section>
+
+    <!-- LATEST BLOGS - ONLY ONE SECTION -->
+
+    <section class="latest-blogs" id="latest-blogs">
+
+        <h2>Latest Blogs</h2>
+
+        <div class="blog-container">
+
+            <div class="blog-card">
+
+                <a href="first.blog.html">
+
+                    <h3>UrbanX Website – Latest Review</h3>
+
+                    <p>
+                        Read my honest shopping experience with UrbanX.
+                        Explore my review of product quality, delivery,
+                        fitting and customer service.
+                    </p>
+
+                    <span>Read Full Review →</span>
+
+                </a>
+
+            </div>
+
+        </div>
 
     </section>
 
-    <footer id="about">
+
+    <!-- FOOTER -->
+
+    <footer>
+
         <h3>ShopScope.</h3>
+
         <p>Helping you shop smarter.</p>
+
         <p>© 2026 ShopScope</p>
+
     </footer>
 
-    <script src="script.js"></script>
 </body>
+
 </html>
